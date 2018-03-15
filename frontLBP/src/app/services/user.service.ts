@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/throw';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class UserService {
@@ -13,7 +13,7 @@ export class UserService {
   ) { }
 
   fetchUser(): Observable<any> {
-    return this.http.get('http://localhost:3000/users')
+    return this.http.get('http://localhost:3000/api/users')
     .map((res: Response) => res.json())
     .map(user => user)
     .catch(e => {
@@ -23,14 +23,12 @@ export class UserService {
   }
 
   addUser(user): Observable<any> {
-    return this.http.get('http://localhost:3000/users', user)
+    return this.http.get('http://localhost:3000/api/users', user)
     .map((res: Response) => res.json())
-    .map(function(usersss) {
-      return user;
-    })
+    .map(userrr => user)
     .catch(e => {
       console.log(e);
       return Observable.throw(e);
   });
-
+}
 }

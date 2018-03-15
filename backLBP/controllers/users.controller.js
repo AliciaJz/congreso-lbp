@@ -1,6 +1,6 @@
 const User = require ('../models/User');
 
-exports.getUsers = function(req, res, next) {
+exports.getUsers = (req, res, next) => {
     User.find()
     .then(users => res.status(200).json(users))
     .catch(e => res.status(500).send(e));
@@ -13,6 +13,6 @@ exports.getUsers = function(req, res, next) {
         });
 
     newUser.save()
-    .then(user => res.tatus(201).json(user))
+    .then(user => res.status(201).json(user))
     .catch(e => res.status(500).send(e))
   }

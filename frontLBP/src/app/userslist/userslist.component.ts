@@ -8,9 +8,10 @@ import { UserService } from '../services/user.service';
 })
 export class UserslistComponent implements OnInit {
   users: Array<any>;
-  constructor() { }
+  constructor( private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.fetchUser()
+    .subscribe(users => this.users = users);
   }
-
 }

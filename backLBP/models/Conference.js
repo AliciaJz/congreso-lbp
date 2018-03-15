@@ -4,7 +4,10 @@ const Schema   = mongoose.Schema;
 const conferenceSchema = new Schema({
   number: Number,
   fromtoDates: String,
-  classes:[],
+  classes:[{
+    type: Schema.Types.ObjectId,
+    ref: "Class"
+  }],
   media: String,
   description: String
 });

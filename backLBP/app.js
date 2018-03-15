@@ -7,8 +7,11 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+// var classes = require('./routes/classes');
+// var conferences = require('./routes/conferences');
 
 var app = express();
+// app.use(require("cors")());
 
 require('mongoose').connect('mongodb://localhost/lbpconf');
 
@@ -25,7 +28,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/api/users', users);
+// app.use('/classes', classes);
+// app.use('/conference', conferences);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
