@@ -10,7 +10,7 @@ exports.getUsers = function(req, res, next) {
     const newUser = new User({
       username: req.body.username,
       email: req.body.email
-    });
+        });
 
     newUser.save()
     .then(user => res.tatus(201).json(user))

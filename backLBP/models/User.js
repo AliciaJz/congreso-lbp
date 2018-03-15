@@ -12,6 +12,16 @@ const userSchema = new Schema({
   country: String,
   profilePic: String,
   member: Boolean,
+  role:{
+    type:String,
+    enum:['ADMIN','ATTENDEE','GUEST'],
+    default:'GUEST'
+  },
+  food:{
+    type:String,
+    enum:['Carnivoro','Vegetariano','Vegano'],
+    default:'Vegetariano'
+  }
 
 });
 
