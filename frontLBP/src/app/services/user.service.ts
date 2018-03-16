@@ -12,23 +12,44 @@ export class UserService {
     private http: Http
   ) { }
 
-  fetchUser(): Observable<any> {
-    return this.http.get('http://localhost:3000/api/users')
+  removeItem(item) {
+    return this.http.delete('/api/users/' + item._id)
     .map((res: Response) => res.json())
-    .map(user => user)
+    .map(itemm => item)
     .catch(e => {
       console.log(e);
       return Observable.throw(e);
     });
   }
 
-  addUser(user): Observable<any> {
-    return this.http.get('http://localhost:3000/api/users', user)
+  patchItem(item): Observable<any> {
+    return this.http.patch('/api/users/' + item._id, item)
     .map((res: Response) => res.json())
-    .map(userrr => user)
+    .map(itemm => item)
     .catch(e => {
       console.log(e);
       return Observable.throw(e);
-  });
-}
+    });
+  }
+
+  fetchItems(): Observable<any> {
+    return this.http.get('/api/cards')
+    .map((res: Response) => res.json())
+    .map(items => items)
+    .catch(e => {
+      console.log(e);
+      return Observable.throw(e);
+    });
+  }
+
+  addItem(item): Observable<any> {
+    return this.http.post('/api/cards', item)
+    .map((res: Response) => res.json())
+    .map(itemm => item)
+    .catch(e => {
+      console.log(e);
+      return Observable.throw(e);
+    });
+  }
+
 }

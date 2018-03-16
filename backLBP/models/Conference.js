@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
 const conferenceSchema = new Schema({
-  number: Number,
+  edition: String,
   fromtoDates: String,
   classes:[{
     type: Schema.Types.ObjectId,

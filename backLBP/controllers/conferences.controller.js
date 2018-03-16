@@ -1,18 +1,30 @@
 const Conference = require ('../models/Conference');
 
+exports.deleteConference = (req, res, next) => {
+  Conference.findByIdAndRemove(req.params.id)
+  .then(item => res.status(200).json(item))
+  .catch(e => res.status(500).send(e));
+}
+
+exports.patchConference = (req, res, next) => {
+  Conference.findByIdAndUpdate(req.params.id, req.body, {new:true})
+  .then(item => res.status(200).json(item))
+  .catch(e => res.status(500).send(e));
+}
+
 exports.getConferences = (req, res, next) => {
-    Conference.find()
-    .then(conferences => res.status(200).json(conferences))
+  Conference.find()
+    .then(items => res.status(200).json(items))
     .catch(e => res.status(500).send(e));
   }
 
-  exports.postConferences = (req, res, next) =>{
+  exports.postConference = (req, res, next) =>{
     const newConference = new Conference({
-      number: req.body.number,
+      edition: req.body.edition,
       description: req.body.description
         });
 
     newConference.save()
-    .then(user => res.status(201).json(user))
+    .then(item => res.status(201).json(item))
     .catch(e => res.status(500).send(e))
   }

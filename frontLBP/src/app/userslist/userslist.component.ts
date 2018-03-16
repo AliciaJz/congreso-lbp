@@ -7,11 +7,12 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./userslist.component.css']
 })
 export class UserslistComponent implements OnInit {
+
   users: Array<any>;
   constructor( private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.fetchUser()
+    this.userService.fetchItems()
     .subscribe(users => this.users = users);
   }
 }

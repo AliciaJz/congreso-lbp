@@ -5,6 +5,8 @@ const controller = require ('../controllers/classes.controller');
 
 /* GET classes listing. */
 router.get('/', controller.getClasses);
-router.post('/', controller.postClasses);
+router.post('/', controller.postClass);
+router.patch('/:id', controller.patchClass);
+router.delete('/:id', controller.deleteClass);
 
 module.exports = router;
