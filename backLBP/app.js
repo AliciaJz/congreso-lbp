@@ -13,7 +13,8 @@ var conferences = require('./routes/conferences');
 var app = express();
 app.use(require("cors")());
 
-require('mongoose').connect('mongodb://localhost/lbpconf');
+require('mongoose').connect('mongodb://localhost/lbpconf')
+  .then(console.log("Connected to DB!!"))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
