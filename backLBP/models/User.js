@@ -7,10 +7,6 @@ const userSchema = new Schema({
   email: String,
   username: String,
   social: String,
-  classes:[{
-    type: Schema.Types.ObjectId,
-    ref: "Class"
-  }],
   studio: String,
   country: String,
   profilePic: String,

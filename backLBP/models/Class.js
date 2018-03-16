@@ -8,6 +8,10 @@ const classSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Conference"
   }],
+  attendees:[{
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  }],
   day: String,
   time: Date,
   Speaker: String,
