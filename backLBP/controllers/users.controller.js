@@ -20,8 +20,8 @@ exports.getUsers = (req, res, next) => {
 
   exports.postUser = (req, res, next) =>{
     const newUser = new User({
-      title: req.body.title,
-      description: req.body.description
+      username: req.body.username,
+      password: req.body.password
         });
 
     newUser.save()
