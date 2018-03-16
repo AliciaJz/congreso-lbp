@@ -33,7 +33,7 @@ export class UserService {
   }
 
   fetchItems(): Observable<any> {
-    return this.http.get('/api/cards')
+    return this.http.get('/api/users')
     .map((res: Response) => res.json())
     .map(items => items)
     .catch(e => {
@@ -43,7 +43,7 @@ export class UserService {
   }
 
   addItem(item): Observable<any> {
-    return this.http.post('/api/cards', item)
+    return this.http.post('/api/users', item)
     .map((res: Response) => res.json())
     .map(itemm => item)
     .catch(e => {
@@ -51,5 +51,4 @@ export class UserService {
       return Observable.throw(e);
     });
   }
-
 }
