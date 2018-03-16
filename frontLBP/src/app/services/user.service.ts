@@ -7,7 +7,7 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class UserService {
-
+  baseURL = 'http://localhost:3000'
   constructor(
     private http: Http
   ) { }
@@ -33,7 +33,7 @@ export class UserService {
   }
 
   fetchItems(): Observable<any> {
-    return this.http.get('/api/users')
+    return this.http.get(`${this.baseURL}/api/users`)
     .map((res: Response) => res.json())
     .map(items => items)
     .catch(e => {
