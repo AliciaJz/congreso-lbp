@@ -5,7 +5,7 @@ const controller = require ('../controllers/users.controller');
 /* GET users listing. */
 router.get('/', controller.getUsers);
 router.post('/', controller.postUser);
-// router.get('/:id', controller.getProfile);
+router.get('/:id', controller.getUser);
 router.patch('/:id', controller.patchUser);
 router.delete('/:id', controller.deleteUser);
 

@@ -7,13 +7,13 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class UserService {
-  baseURL = 'http://localhost:3000'
+  baseURL = 'http://localhost:3000';
   constructor(
     private http: Http
   ) { }
 
   removeItem(item) {
-    return this.http.delete('/api/users/' + item._id)
+    return this.http.delete(`${this.baseURL}/api/users` + item._id)
     .map((res: Response) => res.json())
     .map(itemm => item)
     .catch(e => {
@@ -23,7 +23,7 @@ export class UserService {
   }
 
   patchItem(item): Observable<any> {
-    return this.http.patch('/api/users/' + item._id, item)
+    return this.http.patch(`${this.baseURL}/api/users` + item._id, item)
     .map((res: Response) => res.json())
     .map(itemm => item)
     .catch(e => {
@@ -42,8 +42,18 @@ export class UserService {
     });
   }
 
+  // fetchItem(): Observable<any> {
+  //   return this.http.get(`${this.baseURL}/api/users` + item._id, item)
+  //   .map((res: Response) => res.json())
+  //   .map(item => item)
+  //   .catch(e => {
+  //     console.log(e);
+  //     return Observable.throw(e);
+  //   });
+  // }
+
   addItem(item): Observable<any> {
-    return this.http.post('/api/users', item)
+    return this.http.post(`${this.baseURL}/api/users`, item)
     .map((res: Response) => res.json())
     .map(itemm => item)
     .catch(e => {
