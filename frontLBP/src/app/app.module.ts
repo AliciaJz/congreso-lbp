@@ -10,6 +10,7 @@ import { UserslistComponent } from './userslist/userslist.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConferenceBoardComponent } from './conference-board/conference-board.component';
+import { ClassesComponent } from './conference-board/classes/classes.component';
 
 // services
 import { UserService } from './services/user.service';
@@ -18,8 +19,13 @@ import { ConferenceService } from './services/conference.service';
 
 // routes
 const routes = [
+  {path: '', component: DashboardComponent},
   {path: 'users', component: UserslistComponent},
   {path: 'users/:id', component: UserDetailComponent},
+  {path: 'classes', component: ClassesComponent},
+  {path: 'classes/:id', component: ClassesComponent},
+  {path: 'conferences', component: ConferenceBoardComponent},
+  {path: 'conferences/:id', component: ConferenceBoardComponent},
 ];
 
 @NgModule({
@@ -28,7 +34,8 @@ const routes = [
     UserslistComponent,
     UserDetailComponent,
     DashboardComponent,
-    ConferenceBoardComponent
+    ConferenceBoardComponent,
+    ClassesComponent
   ],
   imports: [
     BrowserModule,
