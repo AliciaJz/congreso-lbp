@@ -5,16 +5,30 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+const cors           = require("cors");
+const authController = require("./routes/authController");
+const session        = require("express-session");
+const passport       = require("passport");
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var classes = require('./routes/classes');
 var conferences = require('./routes/conferences');
 
 var app = express();
-app.use(require("cors")());
+// app.use(require("cors")());
 
 require('mongoose').connect('mongodb://localhost/lbpconf')
-  .then(console.log("Connected to DB!!"))
+  .then(console.log("Base de daos conectada!!"))
+
+  var corsOptions = {
+    origin: true,
+    credentials: true
+  };
+  app.use(cors(corsOptions));
+
+  app.use(express.static(path.join(__dirname, 'public')));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,12 +40,25 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret: "lbp",
+  resave: true,
+  saveUninitialized: true,
+  cookie: { httpOnly: true, maxAge: 2419200000 }
+}));
+
+// Passport configuration
+require("./config/passport")(passport,app);
 
 app.use('/', index);
 app.use('/api/users', users);
 app.use('/api/classes', classes);
 app.use('/api/conferences', conferences);
+
+app.all('/*', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,9 +1,23 @@
      <div class="navbar">
         <img width="100" alt="LBP Logo" src="../assets/images/LBP_logo.jpg" href="http://localhost:4200">
 
-        <a  [routerLink]="['/users']">Usuarios</a>
-        <a  [routerLink]="['/classes']">Clases</a>
-        <a  [routerLink]="['/conferences']">Congreso</a>
+        <div class="container">
+            <div class="nav">
+                <ul>
+                    <li><a  [routerLink]="['/']">Inicio</a></li>
+                    <li><a  [routerLink]="['/users']">Usuarios</a></li>
+                    <li><a  [routerLink]="['/conferences']">Congreso</a>
+                        <ul>
+                            <li><a  [routerLink]="['/classes']">Clases</a></li>
+                            <li>Asistentes al Congreso</li>
+                        </ul>
+                    </li>
+                    <li>Log in</li>
+                    <li>Sign up</li>
+                    <li>Log out</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
 <router-outlet></router-outlet>

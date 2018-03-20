@@ -11,13 +11,18 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConferenceBoardComponent } from './conference-board/conference-board.component';
 import { ClassesComponent } from './conference-board/classes/classes.component';
+import { AuthLoginComponent } from './auth-login/auth-login.component';
+import { AuthSignupComponent } from './auth-signup/auth-signup.component';
+import { MyPrivatePageComponent } from './my-private-page/my-private-page.component';
 
 // services
 import { UserService } from './services/user.service';
 import { ClassService } from './services/class.service';
 import { ConferenceService } from './services/conference.service';
+import { SessionService } from './services/session.service';
 
 // routes
+
 const routes = [
   {path: '', component: DashboardComponent},
   {path: 'users', component: UserslistComponent},
@@ -26,6 +31,9 @@ const routes = [
   {path: 'classes/:id', component: ClassesComponent},
   {path: 'conferences', component: ConferenceBoardComponent},
   {path: 'conferences/:id', component: ConferenceBoardComponent},
+  {path: 'login' , component:AuthLoginComponent},
+  {path: 'signup' , component:AuthSignupComponent},
+  {path: 'private', component:MyPrivatePageComponent}
 ];
 
 @NgModule({
@@ -35,7 +43,10 @@ const routes = [
     UserDetailComponent,
     DashboardComponent,
     ConferenceBoardComponent,
-    ClassesComponent
+    ClassesComponent,
+    AuthLoginComponent,
+    AuthSignupComponent,
+    MyPrivatePageComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +54,7 @@ const routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [UserService, ClassService, ConferenceService],
+  providers: [UserService, ClassService, ConferenceService, SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
