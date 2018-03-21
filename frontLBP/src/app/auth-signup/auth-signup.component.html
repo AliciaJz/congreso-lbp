@@ -1,16 +1,14 @@
-<h1> Authentication Sample </h1>
-<form (ngSubmit)="sendSignupForm(myForm)" #myForm="ngForm">
+<form class="signup" (ngSubmit)="sendSignupForm(myForm)" #myForm="ngForm">
   <h2> Registrate </h2>
   <label> Nombre para Gafete </label>
   <input type="text" [(ngModel)]="username" name="username"/>
-  <br>
+  <br><br>
   <label> Contraseña </label>
   <input type="password" [(ngModel)]="password" name="password"/>
-  <br>
+  <br><br>
   <label> Nombre para Diploma </label>
   <input type="text" [(ngModel)]="fullName" name="fullName"/>
-  <br>
-
+  <br><br>
   <button type="submit" > Registrate </button>
 </form>
 <p class="error"> {{ error }} </p>

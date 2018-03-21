@@ -1,3 +1,25 @@
 <p>
   conference-edit works!
 </p>
+
+<div class="cont">
+  <section class="form-class-update">
+      <h2>Edita este congreso</h2>
+      <form method="POST" action="/conference/edit/<%=conference._id%>" id="edit-conference-form" class="conference-form">
+        <div class="field">
+          <label for="edition">Congreso numero: </label>
+          <input type="text" name="edition" value="<%=conference.title%>">
+        </div>
+        <div class="field">
+          <label for="description">Descripción: </label>
+          <input type="text" name="description" 
+          value="<%=conference.description%>">
+        </div>
+        <div class="field">
+          <label for="fromtoDates">Dias del congreso: </label>
+          <input type="text" name="fromtoDates" value="<%=conference.fromtoDates%>">
+        </div>
+        <button id="edit-submit" class="submit-button">Actualiza el congreso</button>
+      </form>
+    </section>  
+  </div>

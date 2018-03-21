@@ -1,23 +1,27 @@
-     <div class="navbar">
-        <img [routerLink]="['/']" class="navLogo" alt="LBP Logo" src="../assets/images/LBP_logo.jpg" href="http://localhost:4200">
-        <p> {{user | json}}</p>
-        <div class="container">
-            <div class="nav">
-                <ul>
-                    <!-- <li><a  [routerLink]="['/']">Inicio</a></li> -->
-                    <li><a  [routerLink]="['/users']">Usuarios</a></li>
-                    <li><a  [routerLink]="['/conferences']">Congreso</a>
-                        <ul>
-                            <li><a  [routerLink]="['/classes']">Clases</a></li>
-                            <li>Asistentes al Congreso</li>
-                        </ul>
-                    </li>
-                    <li [routerLink]="['/login']">Log in</li>
-                    <li [routerLink]="['/signup']">Sign up</li>
-                    <li (click)= "logout()">Log out</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<nav class="nav">
+    <img [routerLink]="['/']" class="navLogo" alt="LBP Logo" src="../assets/images/LBP_logo.jpg" href="http://localhost:4200">
+    <!-- <p> {{user | json}}</p> -->
+    <ul class="top-right">
+        <li>
+            <a [routerLink]="['/users']">Usuarios</a>
+        </li>
+        <li>
+            <a [routerLink]="['/conferences']">Congreso</a>
+            <ul>
+                <li>
+                    <a [routerLink]="['/classes']">Clases</a>
+                </li>
+                <li>Asistentes al Congreso</li>
+            </ul>
+        </li>
+        <li [routerLink]="['/login']">Log in</li>
+        <li [routerLink]="['/signup']">Sign up</li>
+        <li (click)="logout()">Log out</li>
+    </ul>
+</nav>
 
 <router-outlet></router-outlet>
+
+<footer>
+    <img class="lbpFooter" alt="" src="../assets/images/lbpdir.png">
+</footer>

@@ -1,12 +1,12 @@
-<h1> Authentication Sample </h1>
-<form>
-  <h2> Entra </h2>
+<form class="login">
+  <h2>Entra a tu cuenta</h2>
   <label> Username </label>
   <input type="text" [(ngModel)]="formInfo.username" name="username"/>
   <br>
+  <br>
   <label> Password </label>
   <input type="password" [(ngModel)]="formInfo.password" name="password"/>
-
+<br><br>
   <button (click)="sendForm()"> Entra </button>
 </form>
 <p class="error"> {{ error }} </p>

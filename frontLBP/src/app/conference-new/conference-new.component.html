@@ -1,3 +1,16 @@
 <p>
   conference-new works!
 </p>
+
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <p>Congreso numero:
+    <input type="text" name="title" [(ngModel)]="title" />
+  </p>
+  <p>Descripción:
+    <input type="text" name="speaker" [(ngModel)]="speaker" />
+  </p>
+  <p>Dias del congreso:
+    <input type="text" name="day" [(ngModel)]="day" />
+  </p>
+  <button type="submit">Agrega congreso </button>
+</form>

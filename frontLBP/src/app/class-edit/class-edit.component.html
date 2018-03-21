@@ -1,3 +1,33 @@
 <p>
   class-edit works!
 </p>
+
+<div class="cont">
+  <section class="form-class-update">
+      <h2>Edita esta clase</h2>
+      <form method="POST" action="/class/edit/<%=class._id%>" id="edit-class-form" class="company-form">
+        <div class="field">
+          <label for="title">Nombre de clase: </label>
+          <input type="text" name="title" value="<%=class.title%>">
+        </div>
+        <div class="field">
+          <label for="description">Descripción: </label>
+          <input type="text" name="description" 
+          value="<%=class.description%>">
+        </div>
+        <div class="field">
+          <label for="speaker">Ponente: </label>
+          <input type="text" name="speaker" value="<%=class.speaker%>">
+        </div>
+        <div class="field">
+          <label for="day">Día: </label>
+          <input type="text" name="day" value="<%=class.day%>">
+        </div>
+        <div class="field">
+          <label for="time">Hora: </label>
+          <input type="text" name="time" value="<%=class.time%>">
+        </div>
+        <button id="edit-submit" class="submit-button">Actualiza la clase</button>
+      </form>
+    </section>  
+  </div>

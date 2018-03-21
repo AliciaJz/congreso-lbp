@@ -8,32 +8,41 @@ import { Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { UserslistComponent } from './userslist/userslist.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { UserNewComponent } from './user-new/user-new.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { ConferenceBoardComponent } from './conference-board/conference-board.component';
-import { ClassesComponent } from './classes/classes.component';
+import { ConferenceEditComponent } from './conference-edit/conference-edit.component';
+import { ConferenceNewComponent } from './conference-new/conference-new.component';
+
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { AuthSignupComponent } from './auth-signup/auth-signup.component';
 import { MyPrivatePageComponent } from './my-private-page/my-private-page.component';
+
+import { ClassesComponent } from './classes/classes.component';
+import { ClassEditComponent } from './class-edit/class-edit.component';
+import { ClassNewComponent } from './class-new/class-new.component';
+import { ClassesDetailComponent } from './classes-detail/classes-detail.component';
 
 // services
 import { UserService } from './services/user.service';
 import { ClassService } from './services/class.service';
 import { ConferenceService } from './services/conference.service';
 import { SessionService } from './services/session.service';
-import { UserEditComponent } from './user-edit/user-edit.component';
-import { ConferenceEditComponent } from './conference-edit/conference-edit.component';
-import { ClassEditComponent } from './class-edit/class-edit.component';
-import { UserNewComponent } from './user-new/user-new.component';
-import { ClassNewComponent } from './class-new/class-new.component';
-import { ConferenceNewComponent } from './conference-new/conference-new.component';
 
 // routes
 
 const routes = [
   {path: '', component: DashboardComponent},
   {path: 'users', component: UserslistComponent},
-  {path: 'users/:id', component: UserDetailComponent},
+  {path: 'users/new', component: UserNewComponent},
+  {path: 'user/:id', component: UserDetailComponent},
+  {path: 'user/:id/edit', component: UserEditComponent},
+
   {path: 'classes', component: ClassesComponent},
+  {path: 'class/new', component: ClassNewComponent},
   {path: 'classes/:id', component: ClassesComponent},
   {path: 'conferences', component: ConferenceBoardComponent},
   {path: 'conferences/:id', component: ConferenceBoardComponent},
@@ -58,7 +67,8 @@ const routes = [
     ClassEditComponent,
     UserNewComponent,
     ClassNewComponent,
-    ConferenceNewComponent
+    ConferenceNewComponent,
+    ClassesDetailComponent
   ],
   imports: [
     BrowserModule,

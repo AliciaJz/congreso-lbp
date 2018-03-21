@@ -2,7 +2,20 @@
   conference-board works!
 </p>
 
-<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+<section class="conferences">
+  <article>
+    <div class="conference">
+      <h3>Numero de congreso</h3>
+      <strong>lugar</strong>
+      <h4>dias</h4>
+      <p>
+        Descripcion
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
   <p> Congreso numero:
     <input type="text" name="edition" ngModel />
   </p>
@@ -13,4 +26,4 @@
     <input type="text" name="fromtoDates" ngModel />
   </p>
   <button type="submit">Agrega congreso </button>
-</form>
+</form> -->

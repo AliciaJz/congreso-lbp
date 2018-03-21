@@ -1,3 +1,18 @@
 <p>
   class-new works!
 </p>
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <p> Nombre de clase:
+    <input type="text" name="title" [(ngModel)]="title" />
+  </p>
+  <p> Ponente:
+    <input type="text" name="speaker" [(ngModel)]="speaker" />
+  </p>
+  <p> Día:
+    <input type="text" name="day" [(ngModel)]="day" />
+  </p>
+  <p> Hora:
+      <input type="text" name="time" [(ngModel)]="time" />
+    </p>
+  <button type="submit">Agrega clase </button>
+</form>

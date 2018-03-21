@@ -1,18 +1,20 @@
 <p>
   classes works!
 </p>
-<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
-    <p> Nombre de clase:
-      <input type="text" name="title" [(ngModel)]="title" />
-    </p>
-    <p> Ponente
-      <input type="text" name="speaker" [(ngModel)]="speaker" />
-    </p>
-    <p> Día
-      <input type="text" name="day" [(ngModel)]="day" />
-    </p>
-    <p> Hora
-        <input type="text" name="time" [(ngModel)]="time" />
+
+<section class="classes">
+  <article>
+    <div class="class">
+      <h3>Titutlo de clase</h3>
+      <strong>Ponente</strong>
+      <p>dia</p>
+      <p>
+        Descripcion
       </p>
-    <button type="submit">Agrega clase </button>
-  </form>
+    </div>
+  </article>
+</section>
+
+<p>{{classes | json}}</p>
+    <button type="submit">Edita esta clase </button>
+    <button type="submit">Agrega nueva clase </button>
