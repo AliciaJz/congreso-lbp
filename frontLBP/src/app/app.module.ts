@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConferenceBoardComponent } from './conference-board/conference-board.component';
 import { ConferenceEditComponent } from './conference-edit/conference-edit.component';
 import { ConferenceNewComponent } from './conference-new/conference-new.component';
+import { ConferenceDetailComponent } from './conference-detail/conference-detail.component';
 
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { AuthSignupComponent } from './auth-signup/auth-signup.component';
@@ -26,6 +27,9 @@ import { ClassEditComponent } from './class-edit/class-edit.component';
 import { ClassNewComponent } from './class-new/class-new.component';
 import { ClassesDetailComponent } from './classes-detail/classes-detail.component';
 
+import { InicioComponent } from './inicio/inicio.component';
+import { AttendeesComponent } from './attendees/attendees.component';
+
 // services
 import { UserService } from './services/user.service';
 import { ClassService } from './services/class.service';
@@ -35,7 +39,7 @@ import { SessionService } from './services/session.service';
 // routes
 
 const routes = [
-  {path: '', component: DashboardComponent},
+  {path: '', component: InicioComponent},
   {path: 'users', component: UserslistComponent},
   {path: 'users/new', component: UserNewComponent},
   {path: 'user/:id', component: UserDetailComponent},
@@ -43,12 +47,19 @@ const routes = [
 
   {path: 'classes', component: ClassesComponent},
   {path: 'class/new', component: ClassNewComponent},
-  {path: 'classes/:id', component: ClassesComponent},
+  {path: 'class/:id', component: ClassesDetailComponent},
+  {path: 'classes/:id/edit', component: ClassEditComponent},
+
   {path: 'conferences', component: ConferenceBoardComponent},
-  {path: 'conferences/:id', component: ConferenceBoardComponent},
-  {path: 'login' , component:AuthLoginComponent},
-  {path: 'signup' , component:AuthSignupComponent},
-  {path: 'private', component:MyPrivatePageComponent}
+  {path: 'conference/new', component: ConferenceNewComponent},
+  {path: 'conference/:id', component: ConferenceDetailComponent},
+  {path: 'conference/:id/edit', component: ConferenceEditComponent},
+
+  {path: 'login' , component: AuthLoginComponent},
+  {path: 'signup' , component: AuthSignupComponent},
+  {path: 'dash' , component: DashboardComponent},
+  {path: 'private', component: MyPrivatePageComponent},
+  {path: 'attendees', component: AttendeesComponent},
 ];
 
 @NgModule({
@@ -68,7 +79,10 @@ const routes = [
     UserNewComponent,
     ClassNewComponent,
     ConferenceNewComponent,
-    ClassesDetailComponent
+    ClassesDetailComponent,
+    ConferenceDetailComponent,
+    InicioComponent,
+    AttendeesComponent
   ],
   imports: [
     BrowserModule,

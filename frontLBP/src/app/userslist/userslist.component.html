@@ -1,15 +1,11 @@
-
 <h3>Users</h3>
 
-
   <section class="users">
-    <article>
+    <article *ngFor="let user of users">
       <div class="user">
-        <p *ngFor="let user of users"></p>
-        <h3>Nombre completo</h3>
-        <strong>Nombre en gafete</strong>
-        <p>Comida</p>
+        <h3>{{user.fullName}}</h3>
+        <strong>{{user.username}}</strong>
+        <p>{{user.food}}</p>
       </div>
     </article>
   </section>
-<!-- <p>{{users | json}}</p> -->

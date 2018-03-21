@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ConferenceService} from '../services/conference.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-conference-new',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConferenceNewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private conferenceService: ConferenceService, private route: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
+  submitForm(form) {
+    console.log(form.value);
+    this.conferenceService.addItem(form.value)
+      .subscribe(res => {
+        this.route.navigate(['conferences']);
+    });
+    }
 
 }

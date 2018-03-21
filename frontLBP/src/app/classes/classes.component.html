@@ -2,7 +2,7 @@
   classes works!
 </p>
 
-<section class="classes">
+<section (click)='editClass' class="classes">
   <article>
     <div class="class">
       <h3>Titutlo de clase</h3>
@@ -16,5 +16,5 @@
 </section>
 
 <p>{{classes | json}}</p>
-    <button type="submit">Edita esta clase </button>
-    <button type="submit">Agrega nueva clase </button>
+    <!-- <button type="submit">Edita esta clase </button> -->
+    <button [routerLink]="['/class/new']" type="submit">Agrega nueva clase </button>

@@ -1,19 +1,18 @@
-<p>
-  conference-board works!
-</p>
-
 <section class="conferences">
-  <article>
+  <article *ngFor="let conference of conferences">
     <div class="conference">
-      <h3>Numero de congreso</h3>
+      <h3>{{conference.edition}}</h3>
       <strong>lugar</strong>
       <h4>dias</h4>
       <p>
-        Descripcion
+        {{conference.description}}
       </p>
     </div>
   </article>
 </section>
+
+<button [routerLink]="['/conference/new']" type="submit">Agrega nuevo congreso</button>
+
 
 <!-- <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
   <p> Congreso numero:

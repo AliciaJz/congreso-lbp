@@ -4,3 +4,10 @@
     margin: 0;
     padding: 0;
 }
+
+.myChartDiv {
+    max-width: 600px;
+    max-height: 400px;
+  }
+
+  

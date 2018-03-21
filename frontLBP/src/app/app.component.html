@@ -11,12 +11,14 @@
                 <li>
                     <a [routerLink]="['/classes']">Clases</a>
                 </li>
-                <li>Asistentes al Congreso</li>
+                <li>
+                    <a [routerLink]="['/attendees']">Asistentes</a>
+                </li>
             </ul>
         </li>
-        <li [routerLink]="['/login']">Log in</li>
+        <li *ngIf='!user' [routerLink]="['/login']">Log in</li>
         <li [routerLink]="['/signup']">Sign up</li>
-        <li (click)="logout()">Log out</li>
+        <li *ngIf='user' (click)="logout()">Log out</li>
     </ul>
 </nav>
 

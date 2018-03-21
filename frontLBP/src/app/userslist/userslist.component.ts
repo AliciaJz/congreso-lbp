@@ -13,6 +13,6 @@ export class UserslistComponent implements OnInit {
 
   ngOnInit() {
     this.userService.fetchItems()
-    .subscribe(users => this.users = users);
+       .subscribe(users => this.users = users);
   }
 }

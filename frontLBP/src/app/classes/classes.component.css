@@ -1,4 +1,4 @@
-.class{
+.classes{
 	margin: 10px;
 	padding: 15px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
@@ -6,6 +6,6 @@
 	background-color:white;
 	cursor: pointer;
 }
-.class:hover{
+.classes:hover{
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
 }

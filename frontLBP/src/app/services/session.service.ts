@@ -3,6 +3,8 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Http, Response} from '@angular/http';
+import { Router } from '@angular/router';
+import { CanActivate } from '@angular/router';
 
 @Injectable()
 export class SessionService {
@@ -36,7 +38,10 @@ export class SessionService {
 
   logout() {
     return this.http.post(`${this.base_URL}/logout`, {}, this.options)
-      .map(res => res.json())
+      .map(res => {
+        localStorage.removeItem('user');
+        res.json()
+      })
       .catch(err => this.handleError(err));
   }
 
