@@ -25,7 +25,7 @@ export class ConferenceService {
   patchItem(item): Observable<any> {
     return this.http.patch(`${this.baseURL}/api/conferences/` + item._id, item)
     .map((res: Response) => res.json())
-    .map(itemm => item)
+    .map(itemm => itemm)
     .catch(e => {
       console.log(e);
       return Observable.throw(e);
@@ -45,7 +45,7 @@ export class ConferenceService {
   addItem(item): Observable<any> {
     return this.http.post(`${this.baseURL}/api/conferences`, item)
     .map((res: Response) => res.json())
-    .map(itemm => item)
+    //.map(itemm => item)
     .catch(e => {
       console.log(e);
       return Observable.throw(e);

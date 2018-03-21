@@ -55,6 +55,11 @@ body, html {
   .nav ul li:hover ul li:hover {
     background-color: #e0e0e0;
   }
+
+  .navLogo{
+    width: 50px;
+    margin: 10px;
+  }
   
 /* .navbar {
     overflow: hidden;

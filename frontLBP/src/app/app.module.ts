@@ -10,7 +10,7 @@ import { UserslistComponent } from './userslist/userslist.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConferenceBoardComponent } from './conference-board/conference-board.component';
-import { ClassesComponent } from './conference-board/classes/classes.component';
+import { ClassesComponent } from './classes/classes.component';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { AuthSignupComponent } from './auth-signup/auth-signup.component';
 import { MyPrivatePageComponent } from './my-private-page/my-private-page.component';

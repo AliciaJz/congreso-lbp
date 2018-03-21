@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ConferenceService} from '../services/conference.service';
 
 @Component({
   selector: 'app-conference-board',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConferenceBoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private conferenceService: ConferenceService) { }
 
   ngOnInit() {
   }
+
+  submitForm(form) {
+    console.log(form.value);
+    this.conferenceService.addItem(form.value)
+    .subscribe(res => {
+      console.log(res);
+    });
+  }
+
 
 }

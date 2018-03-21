@@ -1,10 +1,10 @@
      <div class="navbar">
-        <img width="100" alt="LBP Logo" src="../assets/images/LBP_logo.jpg" href="http://localhost:4200">
+        <img [routerLink]="['/']" class="navLogo" alt="LBP Logo" src="../assets/images/LBP_logo.jpg" href="http://localhost:4200">
         <p> {{user | json}}</p>
         <div class="container">
             <div class="nav">
                 <ul>
-                    <li><a  [routerLink]="['/']">Inicio</a></li>
+                    <!-- <li><a  [routerLink]="['/']">Inicio</a></li> -->
                     <li><a  [routerLink]="['/users']">Usuarios</a></li>
                     <li><a  [routerLink]="['/conferences']">Congreso</a>
                         <ul>
