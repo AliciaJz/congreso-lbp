@@ -20,6 +20,12 @@ import { UserService } from './services/user.service';
 import { ClassService } from './services/class.service';
 import { ConferenceService } from './services/conference.service';
 import { SessionService } from './services/session.service';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { ConferenceEditComponent } from './conference-edit/conference-edit.component';
+import { ClassEditComponent } from './class-edit/class-edit.component';
+import { UserNewComponent } from './user-new/user-new.component';
+import { ClassNewComponent } from './class-new/class-new.component';
+import { ConferenceNewComponent } from './conference-new/conference-new.component';
 
 // routes
 
@@ -46,7 +52,13 @@ const routes = [
     ClassesComponent,
     AuthLoginComponent,
     AuthSignupComponent,
-    MyPrivatePageComponent
+    MyPrivatePageComponent,
+    UserEditComponent,
+    ConferenceEditComponent,
+    ClassEditComponent,
+    UserNewComponent,
+    ClassNewComponent,
+    ConferenceNewComponent
   ],
   imports: [
     BrowserModule,
