@@ -13,13 +13,13 @@ export class AuthLoginComponent implements OnInit {
     password: ''
   };
 
-  constructor( private sessionS : SessionService, private route: Router) { }
+  constructor( private sessionS: SessionService, private route: Router) { }
 
   ngOnInit() {
   }
 
-  sendForm () {
+  sendForm() {
      this.sessionS.login(this.formInfo.username,this.formInfo.password)
-       .subscribe(respuesta => this.route.navigate(["private"]));
+       .subscribe(respuesta => this.route.navigate(['private']));
   }
 }

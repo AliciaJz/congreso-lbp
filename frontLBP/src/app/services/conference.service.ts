@@ -7,13 +7,13 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class ConferenceService {
-
+  baseURL = 'http://localhost:3000';
   constructor(
     private http: Http
   ) { }
 
   removeItem(item) {
-    return this.http.delete('/api/conferences/' + item._id)
+    return this.http.delete(`${this.baseURL}/api/conferences/` + item._id)
     .map((res: Response) => res.json())
     .map(itemm => item)
     .catch(e => {
@@ -23,7 +23,7 @@ export class ConferenceService {
   }
 
   patchItem(item): Observable<any> {
-    return this.http.patch('/api/conferences/' + item._id, item)
+    return this.http.patch(`${this.baseURL}/api/conferences/` + item._id, item)
     .map((res: Response) => res.json())
     .map(itemm => item)
     .catch(e => {
@@ -33,7 +33,7 @@ export class ConferenceService {
   }
 
   fetchItems(): Observable<any> {
-    return this.http.get('/api/conferences')
+    return this.http.get(`${this.baseURL}/api/conferences`)
     .map((res: Response) => res.json())
     .map(items => items)
     .catch(e => {
@@ -43,7 +43,7 @@ export class ConferenceService {
   }
 
   addItem(item): Observable<any> {
-    return this.http.post('/api/conferences', item)
+    return this.http.post(`${this.baseURL}/api/conferences`, item)
     .map((res: Response) => res.json())
     .map(itemm => item)
     .catch(e => {

@@ -1,6 +1,6 @@
      <div class="navbar">
         <img width="100" alt="LBP Logo" src="../assets/images/LBP_logo.jpg" href="http://localhost:4200">
-
+        <p> {{user | json}}</p>
         <div class="container">
             <div class="nav">
                 <ul>
@@ -12,9 +12,9 @@
                             <li>Asistentes al Congreso</li>
                         </ul>
                     </li>
-                    <li>Log in</li>
-                    <li>Sign up</li>
-                    <li>Log out</li>
+                    <li [routerLink]="['/login']">Log in</li>
+                    <li [routerLink]="['/signup']">Sign up</li>
+                    <li (click)= "logout()">Log out</li>
                 </ul>
             </div>
         </div>

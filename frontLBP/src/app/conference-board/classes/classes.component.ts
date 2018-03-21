@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ClassService } from '../../services/class.service';
 
 @Component({
   selector: 'app-classes',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClassesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private classS: ClassService, private router: Router) { }
 
   ngOnInit() {
   }
-
+  submitForm(myForm) {
+   this.classS.addItem(myForm.value)
+   .subscribe(() => this.router.navigate(['classes']));
+  }
 }

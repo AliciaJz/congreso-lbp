@@ -2,50 +2,15 @@
   conference-board works!
 </p>
 
-<div id="" class="">
-  <form class="">
-    <div class="container">
-      <h2>Entra a tu cuenta</h2>
-      <label for="email">
-        <p>Nombre de usuario</p>
-      </label>
-      <input type="text" placeholder="Ingresa tu nombre de usuario" name="username">
-      <br>
-      <label for="psw">
-        <p>Contraseña</p>
-      </label>
-      <input type="password" placeholder="Ingresa tu contraseña" name="psw">
-      <br>
-      <div class="clearfix">
-        <button type="submit" class="loginbtn">Entra</button>
-      </div>
-    </div>
-  </form>
-</div>
-<br>
-<hr>
-<div id="" class="">
-  <form class="">
-    <div class="container">
-      <h2>Registrate</h2>
-      <label for="email">
-        <p>Email</p>
-      </label>
-      <input type="text" placeholder="Ingresa tu Email" name="email">
-      <br>
-      <label for="psw">
-        <p>Contraseña</p>
-      </label>
-      <input type="password" placeholder="Ingresa tu contraseña" name="psw">
-      <br>
-      <label for="psw-repeat">
-        <p>Confirma tu Contraseña</p>
-      </label>
-      <input type="password" placeholder="Repite tu Contraseña" name="psw-repeat">
-      <br>
-      <div class="clearfix">
-        <button type="submit" class="signupbtn">Registrate</button>
-      </div>
-    </div>
-  </form>
-</div>
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <p> Congreso numero:
+    <input type="text" name="edition" [(ngModel)]="edition" />
+  </p>
+  <p> Descripcion
+    <input type="text" name="description" [(ngModel)]="description" />
+  </p>
+  <p> Dias de la conferencia
+    <input type="text" name="fromtoDates" [(ngModel)]="fromtoDates" />
+  </p>
+  <button type="submit">Agrega congreso </button>
+</form>

@@ -52,6 +52,7 @@ app.use(session({
 require("./config/passport")(passport,app);
 
 app.use('/', index);
+app.use('/api/auth', authController);
 app.use('/api/users', users);
 app.use('/api/classes', classes);
 app.use('/api/conferences', conferences);

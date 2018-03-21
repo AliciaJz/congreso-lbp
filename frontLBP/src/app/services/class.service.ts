@@ -7,13 +7,13 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class ClassService {
-
+  baseURL = 'http://localhost:3000';
   constructor(
     private http: Http
   ) { }
 
   removeItem(item) {
-    return this.http.delete('/api/classes/' + item._id)
+    return this.http.delete(`${this.baseURL}/api/classes/` + item._id)
     .map((res: Response) => res.json())
     .map(itemm => item)
     .catch(e => {
@@ -23,7 +23,7 @@ export class ClassService {
   }
 
   patchItem(item): Observable<any> {
-    return this.http.patch('/api/classes/' + item._id, item)
+    return this.http.patch(`${this.baseURL}/api/classes/` + item._id, item)
     .map((res: Response) => res.json())
     .map(itemm => item)
     .catch(e => {
@@ -33,7 +33,7 @@ export class ClassService {
   }
 
   fetchItems(): Observable<any> {
-    return this.http.get('/api/classes')
+    return this.http.get(`${this.baseURL}/api/classes`)
     .map((res: Response) => res.json())
     .map(items => items)
     .catch(e => {
@@ -42,8 +42,18 @@ export class ClassService {
     });
   }
 
+  // fetchItem(item): Observable<any> {
+  //   return this.http.get(`${this.baseURL}/api/classes` + item._id, item)
+  //   .map((res: Response) => res.json())
+  //   .map(itemm => item)
+  //   .catch(e => {
+  //     console.log(e);
+  //     return Observable.throw(e);
+  //   });
+  // }
+
   addItem(item): Observable<any> {
-    return this.http.post('/api/classes', item)
+    return this.http.post(`${this.baseURL}/api/classes`, item)
     .map((res: Response) => res.json())
     .map(itemm => item)
     .catch(e => {
