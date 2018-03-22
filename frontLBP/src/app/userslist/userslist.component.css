@@ -14,3 +14,7 @@
 .user:hover{
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
 }
+
+h3{
+	color: rgb(33, 33, 33);
+}

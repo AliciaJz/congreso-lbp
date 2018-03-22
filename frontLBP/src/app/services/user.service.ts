@@ -42,10 +42,9 @@ export class UserService {
     });
   }
 
-  fetchItem(item): Observable<any> {
-    return this.http.get(`${this.baseURL}/api/users` + item._id, item)
+  fetchItem(id): Observable<any> {
+    return this.http.get(`${this.baseURL}/api/users` + id)
     .map((res: Response) => res.json())
-    .map(i => i)
     .catch(e => {
       console.log(e);
       return Observable.throw(e);

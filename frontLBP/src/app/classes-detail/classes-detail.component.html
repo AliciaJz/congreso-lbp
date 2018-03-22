@@ -1,7 +1,5 @@
-<p>
-  classes-detail works!
-</p>
-
+<h4>Detalle de clase {{class.title}}</h4>
+<p>Agrega o remueve asistentes de esta clase</p>
 <input [(ngModel)]="search" type="text" placeholder="Busca con nombre de gafete">
 
 <p *ngFor="let user of users | filter:'username':search ">
