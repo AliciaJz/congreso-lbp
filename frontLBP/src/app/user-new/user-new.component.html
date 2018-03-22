@@ -1,3 +1,50 @@
 <p>
   user-new works!
 </p>
+
+<form class="signup" (ngSubmit)="sendSignupForm(myForm)" #myForm="ngForm">
+  <h2> Registrate </h2>
+  <label>Nombre para Gafete </label>
+  <input type="text" [(ngModel)]="username" name="username" />
+  <br>
+  <br>
+  <label>Contraseña </label>
+  <input type="password" [(ngModel)]="password" name="password" />
+  <br>
+  <br>
+  <label>Nombre para Diploma </label>
+  <input type="text" [(ngModel)]="fullName" name="fullName" />
+  <br>
+  <br>
+  <label>E-mail </label>
+  <input type="email" [(ngModel)]="email" name="email" />
+  <br>
+  <br>
+  <label>Red Social </label>
+  <input type="text" [(ngModel)]="social" name="social" />
+  <br>
+  <br>
+  <label>Nombre de tu estudio </label>
+  <input type="text" [(ngModel)]="studio" name="studio" />
+  <br>
+  <br>
+  <label>Pais </label>
+  <input type="text" [(ngModel)]="country" name="country" />
+  <br>
+  <br>
+  <label>Eres Miembro?</label>
+  <input type="checkbox" [(ngModel)]="member" name="member" false/>
+  <br>
+  <br>
+  <label>Que tipo de comida prefieres?</label>
+  <label>
+    <input type="radio" [(ngModel)]="food" name="food" />Carnivoro</label>
+  <label>
+    <input type="radio" [(ngModel)]="food" name="food" />Vegetariano</label>
+  <label>
+    <input type="radio" [(ngModel)]="food" name="food" />Vegano</label>
+  <br>
+  <br>
+  <button type="submit"> Registrate </button>
+</form>
+<p class="error"> {{ error }} </p>

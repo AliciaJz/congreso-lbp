@@ -1,3 +1,11 @@
 <p>
   classes-detail works!
 </p>
+
+<input [(ngModel)]="search" type="text" placeholder="Busca con nombre de gafete">
+
+<p *ngFor="let user of users | filter:'username':search ">
+  {{user.username}}
+  <button type="submit">Agregar a esta clase</button>
+  <button type="submit">Quitar de esta clase</button>
+</p>

@@ -1,9 +1,8 @@
 <section class="conferences">
   <article *ngFor="let conference of conferences">
     <div class="conference">
-      <h3>{{conference.edition}}</h3>
-      <strong>lugar</strong>
-      <h4>dias</h4>
+      <a [routerLink]="['/conference', conference._id]"><h3>{{conference.edition}}</h3></a>
+      <strong>{{conference.fromtoDates}}</strong>
       <p>
         {{conference.description}}
       </p>
@@ -12,17 +11,3 @@
 </section>
 
 <button [routerLink]="['/conference/new']" type="submit">Agrega nuevo congreso</button>
-
-
-<!-- <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
-  <p> Congreso numero:
-    <input type="text" name="edition" ngModel />
-  </p>
-  <p> Descripcion
-    <input type="text" name="description" ngModel />
-  </p>
-  <p> Dias de la conferencia
-    <input type="text" name="fromtoDates" ngModel />
-  </p>
-  <button type="submit">Agrega congreso </button>
-</form> -->

@@ -21,7 +21,8 @@ exports.getConferences = (req, res, next) => {
   exports.postConference = (req, res, next) =>{
     const newConference = new Conference({
       edition: req.body.edition,
-      description: req.body.description
+      description: req.body.description,
+      fromtoDates: req.body.fromtoDates
         });
 
     newConference.save()

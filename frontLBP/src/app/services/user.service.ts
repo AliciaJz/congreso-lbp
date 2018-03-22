@@ -42,15 +42,15 @@ export class UserService {
     });
   }
 
-  // fetchItem(): Observable<any> {
-  //   return this.http.get(`${this.baseURL}/api/users` + item._id, item)
-  //   .map((res: Response) => res.json())
-  //   .map(item => item)
-  //   .catch(e => {
-  //     console.log(e);
-  //     return Observable.throw(e);
-  //   });
-  // }
+  fetchItem(item): Observable<any> {
+    return this.http.get(`${this.baseURL}/api/users` + item._id, item)
+    .map((res: Response) => res.json())
+    .map(i => i)
+    .catch(e => {
+      console.log(e);
+      return Observable.throw(e);
+    });
+  }
 
   addItem(item): Observable<any> {
     return this.http.post(`${this.baseURL}/api/users`, item)

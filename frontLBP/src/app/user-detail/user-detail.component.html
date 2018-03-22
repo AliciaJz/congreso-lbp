@@ -4,3 +4,20 @@
 <p>
   {{user.username}}
 </p>
+<h3>Tu perfil</h3>
+<article *ngFor="let user of users">
+  <section class="users">
+      <div class="user">
+        <h3>{{user.fullName}}</h3>
+        <strong>{{user.username}}</strong>
+        <p>{{user.email}}</p>
+        <p>{{user.social}}</p>
+        <p>{{user.studio}}</p>
+        <p>{{user.country}}</p>
+        <p>{{user.member}}</p>
+        <p>{{user.role}}</p>
+        <p>{{user.food}}</p>
+      </div>
+    </section>
+    </article>
+  

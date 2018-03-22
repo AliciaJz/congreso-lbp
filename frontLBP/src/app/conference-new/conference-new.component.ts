@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ConferenceService} from '../services/conference.service';
+import { ConferenceService } from '../services/conference.service';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-conference-new',
@@ -21,5 +20,4 @@ export class ConferenceNewComponent implements OnInit {
         this.route.navigate(['conferences']);
     });
     }
-
 }

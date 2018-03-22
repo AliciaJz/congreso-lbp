@@ -1,3 +1,85 @@
 <p>
   user-edit works!
 </p>
+
+<form class="signup" (ngSubmit)="sendSignupForm(myForm)" #myForm="ngForm">
+    <h2> Edita tu perfil </h2>
+    <label>Nombre para Gafete </label>
+    <input type="text" [(ngModel)]="username" name="username" />
+    <br>
+    <br>
+    <label>Contraseña </label>
+    <input type="password" [(ngModel)]="password" name="password" />
+    <br>
+    <br>
+    <label>Nombre para Diploma </label>
+    <input type="text" [(ngModel)]="fullName" name="fullName" />
+    <br>
+    <br>
+    <label>E-mail </label>
+    <input type="email" [(ngModel)]="email" name="email" />
+    <br>
+    <br>
+    <label>Red Social </label>
+    <input type="text" [(ngModel)]="social" name="social" />
+    <br>
+    <br>
+    <label>Nombre de tu estudio </label>
+    <input type="text" [(ngModel)]="studio" name="studio" />
+    <br>
+    <br>
+    <label>Pais </label>
+    <input type="text" [(ngModel)]="country" name="country" />
+    <br>
+    <br>
+    <label>Eres Miembro?</label>
+    <input type="checkbox" [(ngModel)]="member" name="member" false/>
+    <br>
+    <br>
+    <label>Que tipo de comida prefieres?</label>
+    <label>
+      <input type="radio" [(ngModel)]="food" name="food" />Carnivoro</label>
+    <label>
+      <input type="radio" [(ngModel)]="food" name="food" />Vegetariano</label>
+    <label>
+      <input type="radio" [(ngModel)]="food" name="food" />Vegano</label>
+    <br>
+    <br>
+    <button type="submit"> Registrate </button>
+  </form>
+  <p class="error"> {{ error }} </p>
+
+<!-- <div class="cont">
+    <section class="form-company-update">
+        <h2>Edita tu cuenta</h2>
+        <form method="POST" action="/user/<%=user._id%>/edit" id="edit-company-form" class="company-form">
+          <div class="field">
+            <label for="title">Title: </label>
+            <input type="text" name="title" value="<%=company.title%>">
+          </div>
+          <div class="field">
+            <label for="email">Email: </label>
+            <input type="text" name="email" value="<%=company.email%>">
+          </div>
+          <div class="field">
+            <label for="description">Description: </label>
+            <input type="text" name="description" 
+            value="<%=company.description%>">
+          </div>
+          <div class="field">
+            <label for="price">Price: </label>
+            <input type="text" name="price" value="<%=company.price%>">
+          </div>
+          <div class="field">
+            <label for="calendar">Calendar link: </label>
+            <input type="text" name="calendar" value="<%=company.schedule%>">
+          </div>
+    
+          <h2>Upload your photo</h2>
+          <br>
+            <input type="file" name="photo" accept="image/*">
+          <button id="edit-submit" class="submit-button">Update</button>
+        </form>
+      </section>
+    </section>
+    </div> -->

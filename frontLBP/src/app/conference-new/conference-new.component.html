@@ -1,7 +1,6 @@
 <p>
   conference-new works!
 </p>
-
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
   <p>Congreso numero:
     <input type="text" name="edition" [(ngModel)]="edition" />
@@ -10,7 +9,7 @@
     <input type="text" name="description" [(ngModel)]="description" />
   </p>
   <p>Dias del congreso:
-    <input type="text" name="dafromtoDatesy" [(ngModel)]="fromtoDates" />
+    <input type="text" name="fromtoDates" [(ngModel)]="fromtoDates" />
   </p>
   <button type="submit">Agrega congreso </button>
 </form>

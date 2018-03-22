@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-attendees',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AttendeesComponent implements OnInit {
 
-  constructor() { }
+  users: Array<any>;
+  constructor( private userService: UserService) { }
 
   ngOnInit() {
+    this.userService.fetchItems()
+       .subscribe(users => this.users = users);
   }
-
 }

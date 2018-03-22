@@ -36,6 +36,10 @@ import { ClassService } from './services/class.service';
 import { ConferenceService } from './services/conference.service';
 import { SessionService } from './services/session.service';
 
+// herramientas
+import { OrderModule } from 'ngx-order-pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+
 // routes
 
 const routes = [
@@ -46,7 +50,7 @@ const routes = [
   {path: 'user/:id/edit', component: UserEditComponent},
 
   {path: 'classes', component: ClassesComponent},
-  {path: 'class/new', component: ClassNewComponent},
+  {path: 'class/new/:idConference', component: ClassNewComponent},
   {path: 'class/:id', component: ClassesDetailComponent},
   {path: 'classes/:id/edit', component: ClassEditComponent},
 
@@ -82,13 +86,15 @@ const routes = [
     ClassesDetailComponent,
     ConferenceDetailComponent,
     InicioComponent,
-    AttendeesComponent
+    AttendeesComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    OrderModule
   ],
   providers: [UserService, ClassService, ConferenceService, SessionService],
   bootstrap: [AppComponent]

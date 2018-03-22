@@ -1,3 +1,13 @@
 <p>
   attendees works!
 </p>
+
+<section class="users">
+    <article *ngFor="let user of users | orderBy: 'username' : false : true">
+      <div class="user">
+        <h3>{{user.username}}</h3>
+        <strong>{{user.fullName}}</strong>
+        <p>{{user.food}}</p>
+      </div>
+    </article>
+  </section>

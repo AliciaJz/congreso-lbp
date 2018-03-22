@@ -52,10 +52,11 @@ export class ClassService {
   //   });
   // }
 
-  addItem(item): Observable<any> {
-    return this.http.post(`${this.baseURL}/api/classes`, item)
+  addItem(item, idConference){
+    console.log(item)
+    return this.http.post(`${this.baseURL}/api/classes/new/${idConference}`, item)
     .map((res: Response) => res.json())
-    .map(itemm => item)
+    .map(items => items)
     .catch(e => {
       console.log(e);
       return Observable.throw(e);

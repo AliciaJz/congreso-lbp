@@ -13,8 +13,8 @@ export class ClassesComponent implements OnInit {
 
   ngOnInit() {
   }
-  submitForm(myForm) {
-   this.classS.addItem(myForm.value)
-   .subscribe(() => this.router.navigate(['classes']));
-  }
+  // submitForm(myForm) {
+  //  this.classS.addItem(myForm.value)
+  //  .subscribe(() => this.router.navigate(['classes']));
+  // }
 }

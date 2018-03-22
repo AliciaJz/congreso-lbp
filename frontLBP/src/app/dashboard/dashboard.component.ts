@@ -1,51 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import * as Chart from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('AsistentesChart') chart: ElementRef;
 
   constructor() { }
 
+  chartConfig: any = {
+    scaleSteps: 5,
+    type: 'bar',
+    data: {
+      labels: ["Oro", "Plata"],
+      datasets: [{
+        label: ['Cantidad de material (KG)'],
+        data: [12, 19],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      legend: {
+        display: false
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true,
+            stepSize: 5
+          }
+        }]
+      }
+    }
+  };
+
+  ngAfterViewInit() {
+    new Chart( this.chart.nativeElement, this.chartConfig); 
+  }
   ngOnInit() {
   }
 }
-
-// var chartData = {
-//   labels: ["clase", "clase", "clase", "clase", "clase", "clase"],
-//       datasets: [{
-//         label: "Clases",
-//         backgroundColor: ["#8e5ea2","#3cba9f","#efd86a","#c45850", "#3e95cd", "#ff89cb"],
-//         data: [24,52,73,78,43,10]
-//       }]
-  
-//   };
-//   var ctx = document.getElementById("myChart");
-//   var myChart = new Chart(ctx, {
-//   type: 'bar',
-//   data: chartData,
-//   options: {
-//     scales: {
-//       yAxes: [{
-//         ticks: {
-//           beginAtZero: true
-//         }
-//       }]
-//     }
-//   }
-//   });
-
-//   document.addEventListener('DOMContentLoaded', function() {
-//       document.querySelector('select[name="chart-type"]').onchange= changeEventHandler;
-
-//   }, false);
-
-//   function changeEventHandler(event) {
-//       myChart.destroy();
-//       myChart = new Chart(ctx, {
-//         type: this.value,
-//         data: chartData
-//       });
-//   }

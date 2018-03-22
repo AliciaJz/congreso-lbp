@@ -2,18 +2,29 @@
   conference-detail works!
 </p>
 
-<section class="classes">
-    <article>
+<section class="conference">
+  <article>
+
+    <object data="../../assets/Acomodo_Clases.pdf" type="application/pdf" width="100%" height="100%">
+      <iframe src="../../assets/Acomodo_Clases.pdf" width="100%" height="100%" style="border: none;">
+        <!-- This browser does not support PDFs. Please download the PDF to view it: <a href="../../assets/Acomodo Clases.pdf">Download PDF</a> -->
+      </iframe>
+    </object>
+    <p>{{classes | json}}</p>
+    <article *ngFor="let class of classes">
       <div class="class">
-        <h3>Clase</h3>
-        <strong>Ponente</strong>
-        <h4>horario</h4>
+        <a [routerLink]="['/class', class._id]">
+          <h3>{{class.title}}</h3>
+        </a>
+        <strong>{{class.speaker}}</strong>
         <p>
-          Descripcion
+          {{class.day}}, {{class.time}}, {{class.classroom}}
         </p>
         <p>
-          Salon
+          {{class.description}}
         </p>
       </div>
     </article>
-  </section>
+  </article>
+  <button [routerLink]="['/class/new', idConference ]" type="submit">Agrega nueva clase </button>
+</section>

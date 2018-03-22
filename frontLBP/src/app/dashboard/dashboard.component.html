@@ -2,6 +2,8 @@
 <p>dashboard component</p>
 </section>
 
-<div class="myChartDiv">
-    <canvas id="myChart" width="600" height="400"></canvas>
+<div>
+    <canvas class="chart" #AsistentesChart></canvas>
 </div>
+
+<button [routerLink]="['/attendees']" type="submit">Ver todos los asistentes</button>
