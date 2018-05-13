@@ -18,8 +18,8 @@ var conferences = require('./routes/conferences');
 var app = express();
 // app.use(require("cors")());
 
-require('mongoose').connect('mongodb://localhost/lbpconf')
-// require('mongoose').connect('mongodb://lbp:lbp@ds113169.mlab.com:13169/lbp')
+// require('mongoose').connect('mongodb://localhost/lbpconf')
+require('mongoose').connect('mongodb://lbp:lbp@ds113169.mlab.com:13169/lbp')
   .then(console.log("Base de daos conectada!!"))
 
   var corsOptions = {
